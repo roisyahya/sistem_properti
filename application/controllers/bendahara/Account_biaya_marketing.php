@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Account_biaya_kantor extends CI_Controller {
+class Account_biaya_marketing extends CI_Controller {
 
 	public function __construct() {
 		parent::__construct();
@@ -13,21 +13,21 @@ class Account_biaya_kantor extends CI_Controller {
 	public function index()
 	{
 		//chek_session();
-		$data['kelompok_biaya'] = $this->M_kelompok_biaya->get_kelompok_biaya_kantor();
+		$data['kelompok_biaya'] = $this->M_kelompok_biaya->get_kelompok_biaya_marketing();
 		$this->load->view('bendahara/template/header');
 		$this->load->view('bendahara/template/sidebar');
-		$this->load->view('bendahara/account_biaya_kantor', $data);
+		$this->load->view('bendahara/account_biaya_marketing', $data);
 		$this->load->view('bendahara/template/footer');
 	}
 
-	public function add_account_biaya_kantor() {
+	public function add_account_biaya_marketing() {
 
 		$this->_validate();
 
 		$data = array(
 			'kode_account'=>$this->input->post('kode_account'),
 			'keterangan'=>$this->input->post('keterangan'),
-			'jenis'=>'kantor',
+			'jenis'=>'marketing',
 		);
 
 	$insert = $this->M_kelompok_biaya->add_kelompok_biaya($data);
@@ -44,7 +44,7 @@ class Account_biaya_kantor extends CI_Controller {
 
 	}
 
-	public function edit_account_biaya_kantor() {
+	public function edit_account_biaya_marketing() {
 
 		$this->_validate();
 		
@@ -59,7 +59,7 @@ class Account_biaya_kantor extends CI_Controller {
 		echo json_encode(array("status" => TRUE));
 	}
 
-	public function delete_account_biaya_kantor($id) {
+	public function delete_account_biaya_marketing($id) {
 		$this->M_kelompok_biaya->delete_kelompok_biaya($id);
 		echo json_encode(array("status" => TRUE));
 
@@ -67,7 +67,7 @@ class Account_biaya_kantor extends CI_Controller {
 
 	// INput Sub Biaya 1
 
-	public function sub_biaya1()
+	public function sub_biaya1_marketing()
 	{
 
 
@@ -75,19 +75,19 @@ class Account_biaya_kantor extends CI_Controller {
 
 		$this->load->view('bendahara/template/header');
 		$this->load->view('bendahara/template/sidebar');
-		$this->load->view('bendahara/sub_biaya1',$data);
+		$this->load->view('bendahara/sub_biaya1_marketing',$data);
 		$this->load->view('bendahara/template/footer');
 	}
 
-	public function sub_biaya2()
+	public function sub_biaya2_marketing()
 	{
 
 
-		$data['sub_biaya2'] = $this->M_kelompok_biaya->getEditData_biaya2();
+		$data['sub_biaya2_marketing'] = $this->M_kelompok_biaya->getEditData_biaya2();
 
 		$this->load->view('bendahara/template/header');
 		$this->load->view('bendahara/template/sidebar');
-		$this->load->view('bendahara/sub_biaya2',$data);
+		$this->load->view('bendahara/sub_biaya2_marketing',$data);
 		$this->load->view('bendahara/template/footer');
 	}
 

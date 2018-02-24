@@ -18,6 +18,7 @@ class Sub_biaya1 extends CI_Controller {
 			'id_kel_biaya'=>$this->input->post('id_kel_biaya'),
 			'kode_account1'=>$this->input->post('kode_account1'),
 			'keterangan'=>$this->input->post('keterangan'),
+			'jenis'=>'kantor',
 		);
 
 	$insert = $this->M_sub_biaya1->add_sub_biaya1($data);

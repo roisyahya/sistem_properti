@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Sub_biaya2 extends CI_Controller {
+class Sub_biaya2_marketing extends CI_Controller {
 
 	public function __construct() {
 		parent::__construct();
@@ -18,7 +18,7 @@ class Sub_biaya2 extends CI_Controller {
 			'id_sub_biaya1'=>$this->input->post('id_sub_biaya1'),
 			'kode_account2'=>$this->input->post('kode_account2'),
 			'keterangan'=>$this->input->post('keterangan'),
-			'jenis'=>'kantor',
+			'jenis'=>'marketing',
 		);
 
 	$insert = $this->M_sub_biaya2->add_sub_biaya2($data);
@@ -42,6 +42,7 @@ class Sub_biaya2 extends CI_Controller {
 			
 			'kode_account2'=>$this->input->post('kode_account2'),
 			'keterangan'=>$this->input->post('keterangan'),
+			'jenis'=>'marketing',
 			
 			);
 

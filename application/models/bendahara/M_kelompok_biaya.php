@@ -13,9 +13,19 @@
 		return $this->db->insert_id();
 	}
 
-	public function get_kelompok_biaya() {
-	$this->db->from('kel_biaya');
-	$query = $this->db->get();
+
+	public function get_kelompok_biaya_kantor() {
+		$query = $this->db->query("SELECT * FROM kel_biaya WHERE jenis='kantor'");
+	return $query->result();
+	}
+
+	public function get_kelompok_biaya_proyek() {
+		$query = $this->db->query("SELECT * FROM kel_biaya WHERE jenis='proyek'");
+	return $query->result();
+	}
+
+	public function get_kelompok_biaya_marketing() {
+		$query = $this->db->query("SELECT * FROM kel_biaya WHERE jenis='marketing'");
 	return $query->result();
 	}
 
