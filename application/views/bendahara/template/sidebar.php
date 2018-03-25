@@ -73,7 +73,7 @@
 
 
          <li>
-          <a href="c">
+          <a href="<?php echo base_url('bendahara/subkontraktor');?>">
             <i class="glyphicon glyphicon-briefcase"></i> <span>Subkontraktor</span>
             <span class="pull-right-container">
              
@@ -128,9 +128,10 @@
                 </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="<?php echo base_url('bendahara/unit_terjual');?>"><i class="fa fa-circle-o"></i> Operasional Kantor</a></li>
-            <li><a href="<?php echo base_url('bendahara/daftar_pemesanan');?>"><i class="fa fa-circle-o"></i> Operasional Proyek </a></li>
-            <li><a href="<?php echo base_url('bendahara/data_lunas');?>"><i class="fa fa-circle-o"></i> Operasional Marketing </a></li>
+            <li><a href="<?php echo base_url('bendahara/operasional_kantor');?>"><i class="fa fa-circle-o"></i> Operasional Kantor</a></li>
+            <li><a href="<?php echo base_url('bendahara/operasional_proyek');?>"><i class="fa fa-circle-o"></i> Operasional Proyek </a></li>
+            <li><a href="<?php echo base_url('bendahara/operasional_marketing');?>"><i class="fa fa-circle-o"></i> Operasional Marketing </a></li>
+            <li><a href="<?php echo base_url('bendahara/operasional_marketing');?>"><i class="fa fa-circle-o"></i> Pendapatan Penjualan Rumah </a></li>
             
             
           </ul>
@@ -145,9 +146,9 @@
                 </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="<?php echo base_url('bendahara/unit_terjual');?>"><i class="fa fa-circle-o"></i> Tanah Mentah</a></li>
-            <li><a href="<?php echo base_url('bendahara/daftar_pemesanan');?>"><i class="fa fa-circle-o"></i> Tanah Metang </a></li>
-            <li><a href="<?php echo base_url('bendahara/data_lunas');?>"><i class="fa fa-circle-o"></i> Tanah Efektif </a></li>
+            <li><a href="<?php echo base_url('bendahara/tanah_mentah');?>"><i class="fa fa-circle-o"></i> Tanah Mentah</a></li>
+            <li><a href="<?php echo base_url('bendahara/tanah_matang');?>"><i class="fa fa-circle-o"></i> Tanah Matang </a></li>
+            <li><a href="<?php echo base_url('bendahara/tanah_efektif');?>"><i class="fa fa-circle-o"></i> Tanah Efektif </a></li>
             
             
           </ul>
@@ -173,16 +174,6 @@
           </ul>
         </li>
 
-        <li>
-          <a href="<?php echo base_url('bendahara/profile');?>">
-            <i class="glyphicon glyphicon-user"></i> <span>Manajemen User</span>
-            <span class="pull-right-container">
-             
-            </span>
-          </a>
-        </li>
-
-        <li><a href="<?php echo base_url('bendahara/petunjuk');?>"><i class="fa fa-book"></i> <span>Petunjuk</span></a></li>
         
       </ul>
     </section>

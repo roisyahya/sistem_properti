@@ -23,6 +23,18 @@
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="<?php echo base_url();?>/assets/admin/dist/css/skins/_all-skins.min.css">
 
+
+
+  
+  <!-- daterange picker -->
+  
+  <!-- bootstrap datepicker -->
+  <link rel="stylesheet" href="<?php echo base_url();?>/assets/admin/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
+  <!-- iCheck for checkboxes and radio inputs -->
+
+  <!-- Select2 -->
+  
+
   
   <!-- Google Font -->
   <link rel="stylesheet"

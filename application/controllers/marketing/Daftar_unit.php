@@ -12,7 +12,7 @@ class Daftar_unit extends CI_Controller {
 	public function index(){
 
 		
-		$data['detail_tanah_efektif'] = $this->M_tanah_efektif->get_tanah_efektif();
+		$data['detail_tanah_efektif'] = $this->M_tanah_efektif->get_tanah_marketing();
 
         $this->load->view('marketing/template/header');
 		$this->load->view('marketing/template/sidebar');

@@ -2,7 +2,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Input Data Pembayaran
+        Detail Data Lunas
         <small>Preview</small>
       </h1>
       <ol class="breadcrumb">
@@ -24,11 +24,11 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form role="form" method="post" action="#">
+            <form role="form" method="post" action="<?php echo site_url('bendahara/input_pembayaran/edit_pembayaran');?>">
               
               <div class="box-body">
 
-                <?php foreach ($detail_lunas as $key ) {   ?>
+                <?php foreach ($edit_pembayaran as $key ) {   ?>
 
                  <div class="form-group">
                   <label >Id Pembayaran</label>
@@ -81,20 +81,10 @@
           <!-- Form Element sizes -->
           <div class="box box-success">
             <div class="box-header with-border">
-              <h3 class="box-title">Uang Muka</h3>
+              <h3 class="box-title">Biaya Lain-lain</h3>
             </div>
             <div class="box-body">
               
-              <div class="form-group">
-                  <label for="exampleInputEmail1">Uang Muka</label>
-                  <input type="number" class="form-control" id="exampleInputEmail1" name="uang_muka"  value="<?php echo $key->uang_muka;?>">
-                </div>
-
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Cara Pembayaran Uang Muka</label>
-                  <input type="text" class="form-control" id="exampleInputEmail1" name="status_um"  value="<?php echo $key->status_um;?>">
-                </div>
-
 
                 <div class="form-group">
                   <label >Diskon</label>
@@ -152,36 +142,30 @@
                   <input type="number" class="form-control" id="exampleInputEmail1" name="sertifikat" value="<?php echo $key->sertifikat;?>">
                 </div>
 
-                <div class="form-group">
-                  <label >Status Sertifikat</label>
-                  <input type="text" class="form-control" id="exampleInputEmail1" name="sertifikat" value="<?php echo $key->status_sertifikat;?>">
+                 <div class="form-group">
+                  <label>Status Sertifikat</label>
+                  <input type="text" class="form-control" id="exampleInputEmail1" name="bestek" value="<?php echo $key->status_sertifikat;?>">
                 </div>
-
-                 
 
                 <div class="form-group">
                   <label >IMB</label>
                   <input type="number" class="form-control" id="exampleInputEmail1" name="imb" value="<?php echo $key->imb;?>">
                 </div>
 
-                <div class="form-group">
-                  <label >Status IMB</label>
-                  <input type="text" class="form-control" id="exampleInputEmail1" name="imb" value="<?php echo $key->status_imb;?>">
+                 <div class="form-group">
+                  <label>Status IMB</label>
+                  <input type="text" class="form-control" id="exampleInputEmail1" name="bestek" value="<?php echo $key->status_imb;?>">
                 </div>
-
-                 
 
                 <div class="form-group">
                   <label >Listrik</label>
                   <input type="number" class="form-control" id="exampleInputEmail1" name="listrik" value="<?php echo $key->listrik;?>">
                 </div>
 
-                <div class="form-group">
-                  <label >Status Listrik</label>
-                  <input type="text" class="form-control" id="exampleInputEmail1" name="listrik" value="<?php echo $key->status_listrik;?>">
+                 <div class="form-group">
+                  <label>Status Listrik</label>
+                  <input type="text" class="form-control" id="exampleInputEmail1" name="bestek" value="<?php echo $key->status_listrik;?>">
                 </div>
-
-                
 
                 <div class="form-group">
                   <label >Bestek</label>
@@ -189,12 +173,8 @@
                 </div>
 
                  <div class="form-group">
-                  <label >Status Bestek</label>
+                  <label>Status Bestek</label>
                   <input type="text" class="form-control" id="exampleInputEmail1" name="bestek" value="<?php echo $key->status_bestek;?>">
-                </div>
-
-
-                
 
                    <?php }?>
                 </div>
@@ -206,22 +186,120 @@
               
                 
               
-
+              <!--
               <div class="box-footer">
-                <a class="btn btn-md btn-danger" href="<?php echo site_url('bendahara/data_lunas');?>">Kembali</a>
-                
+                <a class="btn btn-md btn-danger" href="<?php echo site_url('bendahara/daftar_pemesanan');?>">Kembali</a>
+                <button type="submit" class="btn btn-info pull-right">Ubah</button>
               </div>
+            -->
               <!-- /.box-footer -->
             </form>
 
           </div>
 
+
+
+
          
 
         </div>
+
+
+        <div class="box box-success">
+            <div class="box-header with-border">
+              <h3 class="box-title">Data Pembayaran Uang Muka <?php echo $key->nama_pembeli;?></h3> <br>
+            </div>
+
+
+
+            <table id="" class="table table-bordered table-striped">
+                <thead>
+                <tr>
+                  <th>No</th>
+                  <th>Tanggal Bayar</th>
+                  <th>Nominal</th>
+                </tr>
+                </thead>
+                <tbody>
+                  <?php
+                  $no = 1;
+                  foreach ($cicilan_um as $row) {
+                    
+                   
+                    
+                  ?>
+               <tr>
+                                            <td><?php echo $no++; ?></td>
+                                            <td ><?php echo $row->tgl_bayar; ?></td>
+                                            <td><?php echo $row->nominal_cicilan; ?></td>
+
+                </tr>
+                                         
+            </tbody>
+
+            <?php
+          }
+
+            ?>
+
+
+
+              </table> 
+
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a class="btn btn-md btn-danger" href="<?php echo site_url('bendahara/data_lunas');?>">Kembali</a>
+
+              
+
+              
+
+
+            <div class="box-header with-border">
+
+
+
+                <!--
+
+                 <div class="box-footer">
+                
+                <button type="submit" class="btn btn-info pull-right">Update Pembayaran</button>
+
+                
+              </div>
+            -->
+
+                 
+
+            </div>
+            <!-- /.box-body -->
+          </div>
+
+
         <!--/.col (right) -->
       </div>
       <!-- /.row -->
+      
+
+            </form>
+
+          </div>
+
+
+
+
+
+
+
+
+
+
+
+
+             
+
     </section>
     <!-- /.content -->
   </div>
+
+
+

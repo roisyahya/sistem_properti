@@ -47,7 +47,7 @@
     public function get_pembayaran_lunas() {
     
     $query = $this->db->query("SELECT * FROM pembayaran,tanah_efektif WHERE pembayaran.id_tanah_efektif = tanah_efektif.id_tanah_efektif
-        AND status='Lunas'");
+        AND status_um='Lunas'");
     return $query->result();
     }
 
@@ -65,9 +65,14 @@
     }
 
     //Proses Edit
-    public function proses_edit($where,$data) {
-    	$this->db->update($this->table, $data, $where);
-		return $this->db->affected_rows();
+  //   public function proses_edit($where,$data) {
+  //   	$this->db->update($this->table, $data, $where);
+		// return $this->db->affected_rows();
+  //   }
+
+    public function proses_edit($table,$data,$field_key)
+    {
+        $this->db->update($table,$data,$field_key);
     }
 
     

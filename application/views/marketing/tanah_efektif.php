@@ -36,6 +36,7 @@
                 <tr>
                   <th>No</th>
                   <th>Nama Unit</th>
+                  <th>Lokasi</th>
                   <th>Blok/Nomor </th>
                   <th>LB/LT </th>
                   <th>Status </th>
@@ -56,6 +57,7 @@
                <tr>
                                             <td><?php echo $no++; ?></td>
                                             <td><?php echo $row->nama_unit; ?></td>
+                                            <td><?php echo $row->lokasi; ?></td>
                                             <td><?php echo $row->blok;?> /<?php echo $row->nomor;?></td>
                                             <td><?php echo $row->luas_bangunan;?> / <?php echo $row->luas_tanah; ?> </td>
                                             <td><?php echo $row->status; ?></td>

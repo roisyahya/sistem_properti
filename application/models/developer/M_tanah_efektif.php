@@ -19,6 +19,20 @@
 	return $query->result();
 	}
 
+	//UNtuk marketing 
+	public function get_tanah_marketing() {
+	$this->db->select('*');
+	$this->db->join('pemakaian_tanah', 'pemakaian_tanah.id_pemakaian = tanah_efektif.id_pemakaian');
+	$this->db->join('detail_tanah', 'detail_tanah.id_wilayah = pemakaian_tanah.id_wilayah');
+	$this->db->from('tanah_efektif');
+	$this->db->where('status', 'Tersedia');
+	$query = $this->db->get();
+	return $query->result();
+	}
+
+
+	
+
 	public function get_unit_terjual() {
 	
 	$query = $this->db->query("SELECT * FROM user,tanah_efektif WHERE user.id_user=tanah_efektif.id_user

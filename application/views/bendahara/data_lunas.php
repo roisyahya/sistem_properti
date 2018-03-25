@@ -33,7 +33,6 @@
                   <th>Nama Unit</th>
                   <th>Blok/No</th>
                   <th>LB/LT </th>
-                  <th>Status</th>
                   
                   <th>Aksi</th>
                 </tr>

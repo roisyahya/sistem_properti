@@ -5,7 +5,7 @@ class Daftar_pemesanan extends CI_Controller {
 
 	public function __construct() {
 		parent::__construct();
-		$this->load->model('bendahara/M_pembayaran');
+		$this->load->model(array('bendahara/M_pembayaran','bendahara/M_cicilan_um'));
 		$this->load->helper(array('url','text','form'));
 	}
 
@@ -25,6 +25,7 @@ class Daftar_pemesanan extends CI_Controller {
 
 	
 		$data['edit_pembayaran'] = $this->M_pembayaran->get_edit_pembayaran();
+		$data['cicilan_um'] = $this->M_cicilan_um->get_cicilan();
 
 		
 		$this->load->view('bendahara/template/header');

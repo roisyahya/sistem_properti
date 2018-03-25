@@ -1,238 +1,341 @@
  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
     <section class="content-header">
-      <h1>
-        Input Data Pembayaran
-        <small>Preview</small>
-      </h1>
-      <ol class="breadcrumb">
+    <h1>
+      Input Data Pembayaran
+    </h1>
+    <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="#">Forms</a></li>
-        <li class="active">General Elements</li>
-      </ol>
-    </section>
+        <li class="active">Bendahara</li>
+        <li class="active">Input Data Pembayaran</li>
+    </ol>
+</section>
 
-    <!-- Main content -->
-    <section class="content">
-      <div class="row">
-        <!-- left column -->
-        <div class="col-md-6">
-          <!-- general form elements -->
-          <div class="box box-primary">
-            <div class="box-header with-border">
-              <h3 class="box-title">Booking Fee</h3>
-            </div>
+<!-- Main content -->
+<section class="content">
+<div class="row">
+        <div class="col-xs-12">
+
+<div class="box">
+
+     <ul class="nav nav-tabs">
+      <br>
+        
+        <li class="active"><a href="#datadiri" data-toggle="tab">Booking Fee</a></li>
+        <li><a href="#diklatsar" data-toggle="tab">Uang Muka</a></li>
+        <li><a href="#operasisar" data-toggle="tab">Maksimal KPR</a></li>
+        </ul>
+        
+<div class="tab-content">
+
+  <div class="tab-pane active" id="datadiri"> <br>
+
+  <div class="row">
+  <div class="col-xs-12">
+    <div class="box">
+
             <!-- /.box-header -->
-            <!-- form start -->
-            <form role="form" method="post" action="<?php echo site_url('bendahara/input_pembayaran/add_pembayaran');?>">
-              
-              <div class="box-body">
-
-                 <div class="form-group">
-                  <label >Id Pembayaran</label>
-                  <input type="text" class="form-control" id="exampleInputEmail1" name="id_pembayaran" value="<?php echo $id_pembayaran;?>" readonly>
-                </div>
-
-               
-               
-                 <?php foreach ($id_tanah_efektif as $key ) {   ?>
-
-               
-                 <div class="form-group">
-                  <label >Id Tanah Efektif</label>
-                  <input type="number" class="form-control" id="" name="id_tanah_efektif" value="<?php echo $key->id_tanah_efektif;?>"  readonly>
-                    <?php }?>
-                </div>
-
-                <div class="form-group">
-                  <label >Nama Pembeli</label>
-                  <input type="text" class="form-control" id="exampleInputEmail1" name="nama_pembeli" placeholder="Masukkan Nama Pembeli">
-                </div>
-
-                <div class="form-group">
-                <label>Tanggal Pembayaran</label>
-
-                <div class="input-group date">
-                  <div class="input-group-addon">
-                    <i class="fa fa-calendar"></i>
-                  </div>
-                  <input type="text" name="tgl_bayar" class="form-control pull-right" id="datepicker">
-                </div>
-                <!-- /.input group -->
-              </div>
-                  
-
-                <div class="form-group">
-                  <label >Booking Fee</label>
-                  <input type="number" class="form-control" id="exampleInputEmail1" name="booking_fee" placeholder="Masukkan Besar Booking Fee">
-                </div>
-               
-              </div>
-              <!-- /.box-body -->
-
-              
-          </div>
-
-          <!-- /.box -->
-
-    
-          <!-- Form Element sizes -->
-          <div class="box box-success">
-            <div class="box-header with-border">
-              <h3 class="box-title">Uang Muka</h3>
-            </div>
             <div class="box-body">
-              
-              <div class="form-group">
-                  <label for="exampleInputEmail1">Uang Muka</label>
-                  <input type="number" class="form-control" id="exampleInputEmail1" name="uang_muka" placeholder="Masukkan Besar Uang Muka">
-                </div>
+              <div class="panel panel-primary">
+                  <div class="panel-heading">Booking Fee</div>
+                      <div class="panel-body">
 
+                        <form role="form" method="post" action="<?php echo site_url('bendahara/input_pembayaran/add_pembayaran');?>">
+                          
+                          <table class="table table-hover">
+                            <tr>
+                              <td width="150px">Id Pembayaran</td>
+                              <td width="20px">:</td>
+                              <td colspan="4" width="350px">
+                                 <input type="text" class="form-control" id="exampleInputEmail1" name="id_pembayaran" value="<?php echo $id_pembayaran;?>" readonly style="width:30%;">
+                              </td>                              
+                            </tr>
 
-               <div class="form-group">
-                  <label>Cara Pembayaran Uang Muka</label>
-                  <select class="form-control" name="status_um">
-                    <option>--Pilih Status--</option>
-                    <option value="Lunas">Lunas</option>
-                    <option value="Angsuran">Angsuran</option>
-                    
-                  </select>
-                </div>
+                            <?php foreach ($id_tanah_efektif as $key ) {  } ?>
 
-                <div class="form-group">
-                  <label >Diskon</label>
-                  <input type="number" class="form-control" id="exampleInputEmail1" name="diskon" placeholder="Masukkan Besar Diskon (Jika Ada)">
-                </div>
+                           <tr>
+                              <td width="150px">Id Tanah Efektif</td>
+                              <td width="20px">:</td>
+                              <td colspan="4" width="350px">
+                                 <input type="number" class="form-control" id="" name="id_tanah_efektif" value="<?php echo $key->id_tanah_efektif;?>"  readonly style="width:30%;">
+                              </td>                              
+                            </tr>   
 
-                <div class="form-group">
-                  <label >Penambahan Uang Muka (dari plafon kredit)</label>
-                  <input type="number" class="form-control" id="exampleInputEmail1" name="penambahan_um" placeholder="Masukkan Besar Penambahan Uang Muka (Jika Ada)">
-                </div>
+                             <tr>
+                              <td width="150px">Tanggal Pembayaran</td>
+                              <td width="20px">:</td>
+                              <td colspan="4" width="350px"><input type="text" name="tgl_bayar" class="form-control" id="datepicker" style="width:30%;"   ></td>                              
+                            </tr>                      
 
-                <div class="form-group">
-                  <label >Kelebihan Tanah</label>
-                  <input type="number" class="form-control" id="exampleInputEmail1" name="kelebihan_tanah" placeholder="Masukkan Biaya Kelebihan (Jika Ada)">
-                </div>
+                            <tr>
+                              <td width="150px">Nama Pembeli</td>
+                              <td width="20px">:</td>
+                              <td colspan="4" width="350px"><input type="text" class="form-control" id="exampleInputEmail1" name="nama_pembeli" placeholder="Masukkan Nama Pembeli" style="width:50%;"></td>                              
+                            </tr>
 
-                <div class="form-group">
-                  <label >Biaya Lokasi Strategis</label>
-                  <input type="number" class="form-control" id="exampleInputEmail1" name="lokasi_strategis" placeholder="Masukkan Biaya Lokasi Strategis (Jika Ada)">
-                </div>
+                            
 
+                             <tr>
+                              <td width="150px">Booking Fee</td>
+                              <td width="20px">:</td>
+                              <td width="150px"><input type="number" class="form-control" id="exampleInputEmail1" name="booking_fee" placeholder="Masukkan Besar Booking Fee" style="width:50%;"></td>
+                            </tr>
+
+                          </table>
+
+                      </div>
+                  </div>
             </div>
             <!-- /.box-body -->
+
+
           </div>
           <!-- /.box -->
-
-         
-
-          <!-- Input addon -->
-          
-          <!-- /.box -->
-
         </div>
-        <!--/.col (left) -->
-        <!-- right column -->
-        <div class="col-md-6">
-          <!-- Horizontal Form -->
-          <div class="box box-info">
-            <div class="box-header with-border">
-              <h3 class="box-title">Maksimal KPR</h3>
-            </div>
-            <!-- /.box-header -->
-            <!-- form start -->
-          
-              
-              <div class="box-body">
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Nominal MKR</label>
-                  <input type="number" class="form-control" id="exampleInputEmail1" name="mkr" placeholder="Masukkan Nominal MKR">
-                </div>
-
-
-                <div class="form-group">
-                  <label >Sertifikat</label>
-                  <input type="number" class="form-control" id="exampleInputEmail1" name="sertifikat" placeholder="Masukkan Nominal Sertifikat">
-                </div>
-
-                 <div class="form-group">
-                  <label>Status Sertifikat</label>
-                  <select class="form-control" name="status_sertifikat">
-                    <option>--Pilih Status--</option>
-                    <option value="Belum diterima">Belum diterima</option>
-                    <option value="Sudah diterima">Sudah diterima</option>
-                    
-                  </select>
-                </div>
-
-                <div class="form-group">
-                  <label >IMB</label>
-                  <input type="number" class="form-control" id="exampleInputEmail1" name="imb" placeholder="Masukkan Nominal IMB">
-                </div>
-
-                 <div class="form-group">
-                  <label>Status IMB</label>
-                  <select class="form-control" name="status_imb">
-                    <option>--Pilih Status--</option>
-                    <option value="Belum diterima">Belum diterima</option>
-                    <option value="Sudah diterima">Sudah diterima</option>
-                    
-                  </select>
-                </div>
-
-                <div class="form-group">
-                  <label >Listrik</label>
-                  <input type="number" class="form-control" id="exampleInputEmail1" name="listrik" placeholder="Masukkan Nominal Listrik">
-                </div>
-
-                 <div class="form-group">
-                  <label>Status Listrik</label>
-                  <select class="form-control" name="status_listrik">
-                    <option>--Pilih Status--</option>
-                    <option value="Belum diterima">Belum diterima</option>
-                    <option value="Sudah diterima">Sudah diterima</option>
-                    
-                  </select>
-                </div>
-
-                <div class="form-group">
-                  <label >Bestek</label>
-                  <input type="number" class="form-control" id="exampleInputEmail1" name="bestek" placeholder="Masukkan Nominal Bestek">
-                </div>
-
-                 <div class="form-group">
-                  <label>Status Bestek</label>
-                  <select class="form-control" name="status_bestek">
-                    <option>--Pilih Status--</option>
-                    <option value="Belum diterima">Belum diterima</option>
-                    <option value="Sudah diterima">Sudah diterima</option>
-                    
-                  </select>
-                </div>
-
-
-
-                
-              <!-- /.box-body -->
-              
-                
-              
-
-              <div class="box-footer">
-                <a class="btn btn-md btn-danger" href="<?php echo site_url('bendahara/unit_terjual');?>">Kembali</a>
-                <button type="submit" class="btn btn-info pull-right">Simpan</button>
-              </div>
-              <!-- /.box-footer -->
-            </form>
-
-          </div>
-
-         
-
-        </div>
-        <!--/.col (right) -->
+        <!-- /.col -->
       </div>
-      <!-- /.row -->
-    </section>
+             
+     </div>
+          
+        
+    <div class="tab-pane" id="diklatsar">
+     
+
+<br>
+ <div class="row">
+  <div class="col-xs-12">
+    <div class="box">
+
+            <!-- /.box-header -->
+            <div class="box-body">
+              <div class="panel panel-primary">
+                  <div class="panel-heading">UANG MUKA</div>
+                      <div class="panel-body">
+                          
+
+                          <table class="table table-hover">
+                            <tr>
+                              <td width="150px">Uang Muka</td>
+                              <td width="20px">:</td>
+                              <td colspan="4" width="350px"><input type="number" class="form-control" id="exampleInputEmail1" name="uang_muka" placeholder="Masukkan Besar Uang Muka" style="width:50%;"></td>                              
+                            </tr>
+
+                            <tr>
+                              <td width="150px">Cara Pembayaran Uang Muka</td>
+                              <td width="20px">:</td>
+                              <td colspan="4" width="350px">
+                                    <select class="form-control" name="status_um" style="width:50%;">
+                                      <option>--Pilih Status--</option>
+                                      <option value="Lunas">Lunas</option>
+                                      <option value="Angsuran">Angsuran</option>
+                                    </select>
+                              </td>                              
+                            </tr>
+
+                            <tr>
+                              <td width="150px">Diskon</td>
+                              <td width="20px">:</td>
+                              <td colspan="4" width="350px"><input type="number" class="form-control" id="exampleInputEmail1" name="diskon" placeholder="Masukkan Besar Diskon (Jika Ada)" style="width:50%;"></td>                              
+                            </tr>
+
+
+                             <tr>
+                              <td width="150px">Penambahan Uang Muka (dari plafon kredit)</td>
+                              <td width="20px">:</td>
+                              <td width="150px"><input type="number" class="form-control" id="exampleInputEmail1" name="penambahan_um" placeholder="Masukkan Besar Penambahan Uang Muka (Jika Ada)" style="width:100%;"></td>
+                              <td width="50px">Status Penambahan Uang Muka</td>
+                              <td width="20px">:</td>
+                              <td width="150px"><select class="form-control" name="status_pum" style="width:70%;">
+                                  <option>--Pilih Status--</option>
+                                  <option value="Lunas">Lunas</option>
+                                  <option value="Angsuran">Angsuran</option>
+                                  
+                                </select></td>                              
+                            </tr>
+
+                             <tr>
+                              <td width="150px">Kelebihan Tanah</td>
+                              <td width="20px">:</td>
+                              <td width="150px"><input type="number" class="form-control" id="exampleInputEmail1" name="kelebihan_tanah" placeholder="Masukkan Biaya Kelebihan (Jika Ada)"></td>
+                              <td width="50px">Status Pembayaran Kelebihan Tanah</td>
+                              <td width="20px">:</td>
+                              <td width="150px"><select class="form-control" name="status_kt" style="width:70%;">
+                                  <option>--Pilih Status--</option>
+                                  <option value="Lunas">Lunas</option>
+                                  <option value="Angsuran">Angsuran</option>
+                                  
+                                </select></td>                              
+                            </tr>
+
+
+                            <tr>
+                              <td width="150px">Kelebihan Tanah</td>
+                              <td width="20px">:</td>
+                              <td width="150px"><input type="number" class="form-control" id="exampleInputEmail1" name="kelebihan_tanah" placeholder="Masukkan Besar Penambahan Uang Muka (Jika Ada)" style="width:100%;"></td>
+                              <td width="50px">Status Kelebihan Tanah</td>
+                              <td width="20px">:</td>
+                              <td width="150px"><select class="form-control" name="status_kt" style="width:70%;">
+                                  <option>--Pilih Status--</option>
+                                  <option value="Lunas">Lunas</option>
+                                  <option value="Angsuran">Angsuran</option>
+                                  
+                                </select></td>                              
+                            </tr>
+
+                             <tr>
+                              <td width="150px">Biaya Lokasi Strategis</td>
+                              <td width="20px">:</td>
+                              <td width="150px"><input type="number" class="form-control" id="exampleInputEmail1" name="lokasi_strategis" placeholder="Masukkan Biaya Lokasi Strategis (Jika Ada)"></td>
+                              <td width="50px">Status Pembayaran Biaya Lokasi Strategis</td>
+                              <td width="20px">:</td>
+                              <td width="150px"><select class="form-control" name="status_ls" style="width:70%;">
+                                  <option>--Pilih Status--</option>
+                                  <option value="Lunas">Lunas</option>
+                                  <option value="Angsuran">Angsuran</option>
+                                  
+                                </select></td>                              
+                            </tr>
+
+                          </table>
+
+
+                      </div>
+                  </div>
+            </div>
+            <!-- /.box-body -->
+
+
+          </div>
+          <!-- /.box -->
+        </div>
+        <!-- /.col -->
+      </div>
+             
+     </div>
+
+
+  <!-- Tab Panel Skill -->
+  <div class="tab-pane" id="operasisar">    
+   <br>
+  <div class="row">
+  <div class="col-xs-12">
+    <div class="box">
+
+            <!-- /.box-header -->
+            <div class="box-body">
+              
+
+              <div class="panel panel-primary">
+                  <div class="panel-heading">Maksimal KPR</div>
+                      <div class="panel-body">
+                          <hr>
+
+                          <table class="table table-hover">
+                            <tr>
+                              <td width="150px">Nominal MKR</td>
+                              <td width="20px">:</td>
+                              <td colspan="4" width="350px"><input type="number" class="form-control" id="exampleInputEmail1" name="mkr" placeholder="Masukkan Nominal MKR" style="width:50%;"></td>                              
+                            </tr>
+
+                            <tr>
+                              <td width="150px">Sertifikat</td>
+                              <td width="20px">:</td>
+                              <td colspan="4" width="350px"><input type="number" class="form-control" id="exampleInputEmail1" name="sertifikat" placeholder="Masukkan Nominal Sertifikat" style="width:50%;"></td>                              
+                            </tr>
+
+                             <tr>
+                              <td width="150px">Status Sertifikat</td>
+                              <td width="20px">:</td>
+                              <td colspan="4" width="350px"><select class="form-control" name="status_sertifikat" style="width:50%;">
+                                  <option>--Pilih Status--</option>
+                                  <option value="Belum diterima">Belum diterima</option>
+                                  <option value="Sudah diterima">Sudah diterima</option>                                  
+                                </select>
+                            </td>                              
+                            </tr>
+
+                             <tr>
+                              <td width="150px">IMB</td>
+                              <td width="20px">:</td>
+                              <td width="150px"><input type="number" class="form-control" id="exampleInputEmail1" name="imb" placeholder="Masukkan Nominal IMB"  style="width:100%;"></td>
+                              <td width="50px">Status IMB</td>
+                              <td width="20px">:</td>
+                              <td width="150px"><select class="form-control" name="status_imb">
+                                  <option>--Pilih Status--</option>
+                                  <option value="Belum diterima">Belum diterima</option>
+                                  <option value="Sudah diterima">Sudah diterima</option>                                  
+                                </select></td>                              
+                            </tr>
+
+                            <tr>
+                              <td width="150px">Listrik</td>
+                              <td width="20px">:</td>
+                              <td width="150px"><input type="number" class="form-control" id="exampleInputEmail1" name="listrik" placeholder="Masukkan Nominal Listrik"></td>
+                              <td width="50px">Status Listrik</td>
+                              <td width="20px">:</td>
+                              <td width="150px"><select class="form-control" name="status_listrik">
+                                  <option>--Pilih Status--</option>
+                                  <option value="Belum diterima">Belum diterima</option>
+                                  <option value="Sudah diterima">Sudah diterima</option>                                  
+                                </select></td>                              
+                            </tr>
+
+
+                            <tr>
+                              <td width="150px">Bestek</td>
+                              <td width="20px">:</td>
+                              <td width="150px"><input type="number" class="form-control" id="exampleInputEmail1" name="bestek" placeholder="Masukkan Nominal Bestek"></td>
+                              <td width="50px">Status Bestek</td>
+                              <td width="20px">:</td>
+                              <td width="150px"><select class="form-control" name="status_bestek">
+                                  <option>--Pilih Status--</option>
+                                  <option value="Belum diterima">Belum diterima</option>
+                                  <option value="Sudah diterima">Sudah diterima</option>                                  
+                                </select></td>                              
+                            </tr>
+
+
+                             <tr>
+                              <td width="150px"></td>
+                              <td width="20px"></td>
+                              <td colspan="4" width="350px"></td>                              
+                            </tr>
+
+                            <tr>
+                              <td width="150px"></td>
+                              <td width="20px"></td>
+                              <td colspan="4" width="350px">
+                              <button type="submit" class="btn btn-success"><i class="glyphicon glyphicon-saved">SIMPAN</i></button>
+                              <a class="btn btn-md btn-danger" href="<?php echo site_url('bendahara/unit_terjual');?>"><i class="glyphicon glyphicon-arrow-left">Kembali</i></a>
+                            </td>                              
+                            </tr>
+
+                          </table>
+
+
+                      </div>
+                  </div>
+            </div>
+            <!-- /.box-body -->
+
+
+          </div>
+          <!-- /.box -->
+        </div>
+        <!-- /.col -->
+      </div>
+  </div>
+
+
+      
+</div>
+
+
+
+  <!-- ================================================================================ -->
+
+
+
+</section>
+   
     <!-- /.content -->
   </div>

@@ -23,7 +23,6 @@
 <!-- FastClick -->
 <script src="<?php echo base_url();?>/assets/admin/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
 <script src="<?php echo base_url();?>/assets/admin/plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
-<script src="<?php echo base_url();?>/assets/admin/plugins/input-mask/jquery.inputmask.extensions.js"></script>
 
 <script src="<?php echo base_url();?>/assets/admin/bower_components/fastclick/lib/fastclick.js"></script>
 <!-- AdminLTE App -->
@@ -45,9 +44,11 @@
     })
   })
 
-  
-
   $('#datepicker').datepicker({
+      autoclose: true
+    })
+
+  $('#datepicker1').datepicker({
       autoclose: true
     })
 

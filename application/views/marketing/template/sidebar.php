@@ -70,6 +70,30 @@
           
         </li>
 
+
+
+        <li>
+          <a href="<?php echo base_url('marketing/on_process');?>">
+            <i class="glyphicon glyphicon-globe"></i>
+            <span>On Process</span>
+            <span class="pull-right-container">
+             
+            </span>
+          </a>
+          
+        </li>
+
+        <li>
+          <a href="<?php echo base_url('marketing/market_terjual');?>">
+            <i class="glyphicon glyphicon-globe"></i>
+            <span>Market Terjual</span>
+            <span class="pull-right-container">
+             
+            </span>
+          </a>
+          
+        </li>
+
       
 
        
